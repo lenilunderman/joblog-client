@@ -11,6 +11,8 @@ import ChangePassword from '../ChangePassword/ChangePassword'
 import Home from '../Home'
 import CreateJoblisting from '../Joblisting/CreateEvent'
 import JobListingView from '../JoblistingView'
+import UpdateView from '../JoblistingForm/FormUpdatelisting'
+import JobListingEditForm from '../Joblisting/EventEdit'
 
 class App extends Component {
   constructor () {
@@ -44,7 +46,7 @@ class App extends Component {
             message={msgAlert.message}
           />
         ))}
-        <main className="container">
+        <main className="container-fluid">
           <Route exact path='/' component={Home} />
           <Route path='/sign-up' render={() => (
             <SignUp msgAlert={this.msgAlert} setUser={this.setUser} />
@@ -62,7 +64,13 @@ class App extends Component {
             <CreateJoblisting msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} exact path='/view-joblisting' render={() => (
-            <JobListingView user={user} />
+            <JobListingView user={user} msgAlert={this.msgAlert} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/update-joblisting/:id' render={() => (
+            <UpdateView msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} exact path='/joblisting/:id' render={() => (
+            <JobListingEditForm msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>

@@ -4,6 +4,7 @@ import FormJoblisting from '../JoblistingForm/FormJoblisting'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
 import { Redirect } from 'react-router-dom'
+import messages from '../AutoDismissAlert/messages'
 
 class Events extends Component {
   constructor (props) {
@@ -47,46 +48,20 @@ class Events extends Component {
       .then(res => this.setState({ created: true }))
   }
 
-  // componentDidMount () {
-  //   // Make a request for all of the Events
-  //   // const token = this.state.user ? `Token token=${this.state.user.token}` : ''
-  //   axios({
-  //     url: `${apiUrl}/userevents`,
-  //     method: 'POST',
-  //     headers: {
-  //       'Authorization': `Token token=${this.state.user.token}`
-  //     },
-  //     // fix the pass of data
-  //     data: { ownerEvent: this.state.user._id }
-  //   })
-  //     .then(res => this.setState({ events: res.data.events }))
-  //     .catch(console.log)
-  // }
-
   render () {
     // const { createdId } = this.state
 
     if (this.state.created) {
-      return <Redirect to='/' />
+      const { msgAlert } = this.props
+      msgAlert({
+        heading: 'Created Job listing successfully.',
+        messagE: messages.signOutSuccess,
+        variant: 'success'
+      })
+      return <Redirect to='/view-joblisting' />
     }
-    // const events = this.state.events.map(event => (
-    //   <Link key={event._id} to={`/events/${event._id}`}>
-    //     <div className="card cardHover mb-4 card-body">
-    //       <div className="card-header mb-4" >
-    //         {event.title}
-    //       </div>
-    //       <div className="card-text mb-4">
-    //         {event.description}
-    //       </div>
-    //       <div className="mb-4">
-    //         Event Date: {moment(event.date).format('LLLL')}
-    //       </div>
-    //     </div>
-    //   </Link>
-    // ))
     return (
       <div className="my-Events">
-        <h4 className="currentMyEvent">My Current Events</h4>
         <FormJoblisting joblisting={this.state.joblisting} handleChange={this.inputChange} handleSubmit={this.handleSubmit} />
       </div>
     )
