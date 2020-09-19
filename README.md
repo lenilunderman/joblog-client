@@ -2,7 +2,7 @@
 
 ## Description of Job Logger Application
 
-This application is perfect to keep track of your job search. The user is able to create an account, view, edit, delete a job listing and more importantly, keep themselves organized to find that dream job.
+This application is perfect to keep track of your job search. The user is able to create an account, view, edit, delete an job listing and more importantly, keep themselves organized to find that dream job.
 
 
 ## Important Links
