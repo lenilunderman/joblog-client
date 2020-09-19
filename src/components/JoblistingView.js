@@ -149,7 +149,7 @@ class JobListingView extends Component {
           </Popup>
         }
         <div className="my-joblisting">
-          <h2 className="joblisting-title"> All job listing </h2>
+          <h2 className="joblisting-title"> All Job Listings </h2>
           {jobLists}
         </div>
       </div>
