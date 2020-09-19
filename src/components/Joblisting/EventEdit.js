@@ -75,7 +75,7 @@ const JobListingEditForm = ({ match, user, msgAlert }) => {
         <h2 className="my-4 text-center">Update a job listing </h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="title">
-            <Form.Label className="mt-4"> Company Name: </Form.Label>
+            <Form.Label className="mt-2"> Company Name: </Form.Label>
             <Form.Control
               size="lg"
               placeholder='Enter a company name'
@@ -83,7 +83,7 @@ const JobListingEditForm = ({ match, user, msgAlert }) => {
               name='companyName'
               onChange={inputChange}
             />
-            <Form.Label className="mt-4"> Company Position: </Form.Label>
+            <Form.Label className="mt-2"> Company Position: </Form.Label>
             <Form.Control
               size="lg"
               placeholder='Enter a company position'
@@ -91,7 +91,7 @@ const JobListingEditForm = ({ match, user, msgAlert }) => {
               name='companyPosition'
               onChange={inputChange}
             />
-            <Form.Label className="mt-4"> Company Person: </Form.Label>
+            <Form.Label className="mt-2"> Company Person: </Form.Label>
             <Form.Control
               size="lg"
               placeholder='Enter the name of the person you spoke to'
@@ -99,7 +99,7 @@ const JobListingEditForm = ({ match, user, msgAlert }) => {
               name='companyPerson'
               onChange={inputChange}
             />
-            <Form.Label className="mt-4"> Company Information: </Form.Label>
+            <Form.Label className="mt-2"> Company Information: </Form.Label>
             <Form.Control
               size="lg"
               placeholder='Enter a relevant information about this company'
@@ -107,7 +107,7 @@ const JobListingEditForm = ({ match, user, msgAlert }) => {
               name='companyInfo'
               onChange={inputChange}
             />
-            <Form.Label className="mt-4"> Date I applied for the job: </Form.Label>
+            <Form.Label className="mt-2"> Date I applied for the job: </Form.Label>
             <Form.Control
               size="lg"
               placeholder='Enter a Date'
@@ -116,7 +116,7 @@ const JobListingEditForm = ({ match, user, msgAlert }) => {
               type='date'
               onChange={inputChange}
             />
-            <Form.Label className="mt-4"> Company Replied: </Form.Label>
+            <Form.Label className="mt-2"> Company Replied: </Form.Label>
             <Form.Control
               size="lg"
               placeholder='Did the company replied? What is the status of this application'

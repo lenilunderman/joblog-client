@@ -10,7 +10,7 @@ const JobListingForm = ({ joblisting, handleSubmit, handleChange }) => {
         <h2 className="my-4 text-center">Create a job listing </h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="title">
-            <Form.Label className="mt-4"> Company Name: </Form.Label>
+            <Form.Label className="mt-2"> Company Name: </Form.Label>
             <Form.Control
               size="lg"
               placeholder='Enter a company name'
@@ -18,7 +18,7 @@ const JobListingForm = ({ joblisting, handleSubmit, handleChange }) => {
               name='companyName'
               onChange={handleChange}
             />
-            <Form.Label className="mt-4"> Company Position: </Form.Label>
+            <Form.Label className="mt-2"> Company Position: </Form.Label>
             <Form.Control
               size="lg"
               placeholder='Enter a company position'
@@ -26,7 +26,7 @@ const JobListingForm = ({ joblisting, handleSubmit, handleChange }) => {
               name='companyPosition'
               onChange={handleChange}
             />
-            <Form.Label className="mt-4"> Company Person: </Form.Label>
+            <Form.Label className="mt-2"> Company Person: </Form.Label>
             <Form.Control
               size="lg"
               placeholder='Enter the name of the employer you spoke to'
@@ -34,7 +34,7 @@ const JobListingForm = ({ joblisting, handleSubmit, handleChange }) => {
               name='companyPerson'
               onChange={handleChange}
             />
-            <Form.Label className="mt-4"> Company Information: </Form.Label>
+            <Form.Label className="mt-2"> Company Information: </Form.Label>
             <Form.Control
               size="lg"
               placeholder='Enter a relevant information about this company'
@@ -42,7 +42,7 @@ const JobListingForm = ({ joblisting, handleSubmit, handleChange }) => {
               name='companyInfo'
               onChange={handleChange}
             />
-            <Form.Label className="mt-4"> Date I applied for the job: </Form.Label>
+            <Form.Label className="mt-2"> Date I applied for the job: </Form.Label>
             <Form.Control
               size="lg"
               placeholder='Date'
