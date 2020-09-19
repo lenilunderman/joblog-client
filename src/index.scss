@@ -13,15 +13,11 @@ body{
   padding-bottom: 10px;
 }
 
-.row2 {
-  margin-top: 10px;
-  border-radius: 10px;
-  padding-bottom: 30px;
-  padding-top: 5px;
-}
-
 .container-fluid{
   width: 90% !important;
+}
+.my-joblisting{
+  margin-bottom: 80px;
 }
 
 .my-joblisting h4 {
@@ -85,4 +81,35 @@ p.header-font{
 .leni{
   background-color: red!important;
   color: pink!important;
+}
+
+.cancel-btn{
+  background-color: #ffb74d!important;;
+}
+
+#root > main > div > div > form > button{
+  background-color: #90caf9!important;
+  color: black!important;
+}
+
+#root > main > div > div > div > form > button{
+  background-color: #90caf9!important;
+  color: black!important;
+}
+
+i{
+  color: #37474f!important;
+}
+
+footer.page-footer .footer-copyright {
+  background-color: #90caf9!important;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index:1;
+  left: -0;
+}
+
+#root > main > section > footer > div.footer-copyright.text-center.py-4 > div{
+  color: #244183 !important;
 }

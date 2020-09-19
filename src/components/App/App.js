@@ -13,6 +13,7 @@ import CreateJoblisting from '../Joblisting/CreateEvent'
 import JobListingView from '../JoblistingView'
 import UpdateView from '../JoblistingForm/FormUpdatelisting'
 import JobListingEditForm from '../Joblisting/EventEdit'
+import Footer from '../Header/footer'
 
 class App extends Component {
   constructor () {
@@ -72,6 +73,7 @@ class App extends Component {
           <AuthenticatedRoute user={user} exact path='/joblisting/:id' render={() => (
             <JobListingEditForm msgAlert={this.msgAlert} user={user} />
           )} />
+          <Route path='/' component={Footer} />
         </main>
       </Fragment>
     )

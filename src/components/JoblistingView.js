@@ -115,23 +115,23 @@ class JobListingView extends Component {
           </nav>
           <div className="tab-content pt-3" id="nav-tabContent">
             {joblist.isnametab && <div className="tab-pane fade show active py-2">
-              <p>
+              <p> <i className="fas fa-building fa-2x mr-3"></i>
                 <b> {joblist.companyName} </b>
               </p>
             </div>}
             {joblist.ispositiontab && <div className="tab-pane fade show active py-2">
-              <p>
+              <p> <i className="fas fa-business-time fa-2x mr-3"></i>
                 <b>{joblist.companyPosition}</b>
               </p>
             </div>}
             {joblist.ispersontab && <div className="tab-pane fade show active py-2">
-              <p>
+              <p> <i className="fas fa-users fa-2x mr-3"></i>
                 <b>{joblist.companyPerson}</b>
               </p>
             </div>}
             {joblist.isinfotab && <div className="tab-pane fade show active py-2">
               <p>
-                Date: {joblist.companyDate} ---- <b>{joblist.companyInfo}</b>
+                <i className="fas fa-calendar-alt fa-2x mr-3"></i> {joblist.companyDate} <i className="fas fa-address-card fa-2x mx-3"></i> <b>{joblist.companyInfo}</b>
               </p>
             </div>}
 

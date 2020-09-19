@@ -70,58 +70,64 @@ const JobListingEditForm = ({ match, user, msgAlert }) => {
   }
 
   return (
-    <div className="row2">
-      <div className="col-sm-10 col-md-8 mx-auto mt-5">
-        <h3>Create a job listing </h3>
+    <div className="row">
+      <div className="col-sm-10 col-md-8 mx-auto p-1">
+        <h2 className="my-4 text-center">Update a job listing </h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="title">
-            <Form.Label>company Name</Form.Label>
+            <Form.Label className="mt-4"> Company Name: </Form.Label>
             <Form.Control
+              size="lg"
               placeholder='Enter a company name'
               value={joblisting.companyName}
               name='companyName'
               onChange={inputChange}
             />
-            <Form.Label>company Position</Form.Label>
+            <Form.Label className="mt-4"> Company Position: </Form.Label>
             <Form.Control
-              placeholder='Enter a company Position'
+              size="lg"
+              placeholder='Enter a company position'
               value={joblisting.companyPosition}
               name='companyPosition'
               onChange={inputChange}
             />
-            <Form.Label>company Person</Form.Label>
+            <Form.Label className="mt-4"> Company Person: </Form.Label>
             <Form.Control
-              placeholder='Enter a company Person'
+              size="lg"
+              placeholder='Enter the name of the person you spoke to'
               value={joblisting.companyPerson}
               name='companyPerson'
               onChange={inputChange}
             />
-            <Form.Label>company Info</Form.Label>
+            <Form.Label className="mt-4"> Company Information: </Form.Label>
             <Form.Control
-              placeholder='Enter a company Info'
+              size="lg"
+              placeholder='Enter a relevant information about this company'
               value={joblisting.companyInfo}
               name='companyInfo'
               onChange={inputChange}
             />
-            <Form.Label>company Date</Form.Label>
+            <Form.Label className="mt-4"> Date I applied for the job: </Form.Label>
             <Form.Control
-              placeholder='Date'
+              size="lg"
+              placeholder='Enter a Date'
               value={joblisting.companyDate}
               name='companyDate'
               type='date'
               onChange={inputChange}
             />
-            <Form.Label>company Replied</Form.Label>
+            <Form.Label className="mt-4"> Company Replied: </Form.Label>
             <Form.Control
-              placeholder='Enter a company Replied'
+              size="lg"
+              placeholder='Did the company replied? What is the status of this application'
               value={joblisting.companyReplied}
               name='companyReplied'
               onChange={inputChange}
             />
           </Form.Group>
-          <Button varient="primary" type="submit">Submit</Button>
-          <Link to="/my-events">
-            <Button variant="secondary">Cancel</Button>
+          <Button varient="btnSignUp" className="btn-lg" type="submit">Submit</Button>
+          <Link to="/view-joblisting">
+            <Button variant="" className="cancel-btn btn-lg">Cancel</Button>
           </Link>
         </Form>
       </div>
