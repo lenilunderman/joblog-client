@@ -1,68 +1,75 @@
 import React from 'react'
+import { MDBRow, MDBCol, MDBCardBody, MDBView, MDBMask } from 'mdbreact'
 
-// $('#myTab a').on('click', function (e) {
-//   e.preventDefault()
-//   $(this).tab('show')
-// })
+const Home = () => {
+  return (
+    <section className="text-center my-5">
+      <h1 className="h1-responsive font-weight-bold my-5 big-font">
+        <span className="logo-site">The Job Logger Project </span>
+      </h1>
+      <p className="grey-text w-responsive mx-auto mb-5 header-font">
+        Keep track of every job you apply in one place. The perfect tool for you to track all the companies and positions you have applied over the months. Say goodbye for google spreadsheets and word documents.
+      </p>
 
-const Home = () => (
-  <div className="container">
-    <div className="row">
-      <div className="col-sm">
-        <nav className="blue-grey mt-3 px-2">
-          <div className="nav nav-tabs md-tabs" id="nav-tab" role="tablist">
-            <a className="nav-item nav-link active grey-text font-weight-bold" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
-              aria-controls="nav-home" aria-selected="true">Company Name</a>
-            <a className="nav-item nav-link grey-text font-weight-bold" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
-              aria-controls="nav-profile" aria-selected="false">Company Position</a>
-            <a className="nav-item nav-link grey-text font-weight-bold" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
-              aria-controls="nav-contact" aria-selected="false">Person I spoke to</a>
-            <a className="nav-item nav-link grey-text font-weight-bold" id="nav-person-tab" data-toggle="tab" href="#nav-person" role="tab"
-              aria-controls="nav-person" aria-selected="false">Person I spoke to</a>
-            <a className="nav-item nav-link grey-text font-weight-bold" id="nav-info-tab" data-toggle="tab" href="#nav-info" role="tab"
-              aria-controls="nav-info" aria-selected="false">Company Info</a>
-          </div>
-        </nav>
-        <div className="tab-content pt-5" id="nav-tabContent">
-          <div className="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-            <b>Company name</b>
-            <p><br />Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat
-        veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non
-        irurat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non
-        irure.
+      <MDBRow className="text-center">
+        <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
+          <MDBView className="overlay rounded z-depth-1" waves>
+            <img
+              src="https://getfive.com/wp-content/uploads/2019/08/job-searching.jpg"
+              alt=""
+              className="img-fluid"
+            />
+            <a href="#!">
+              <MDBMask overlay="white-slight" />
+            </a>
+          </MDBView>
+          <MDBCardBody className="pb-0">
+            <h4 className="font-weight-bold my-3">No more Spreadsheets</h4>
+            <p className="grey-text">
+              Say goodbye to excel! You can start using today our application to keep track of all the jobs that you applied.
             </p>
-          </div>
-          <div className="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-            <b>Company Position</b>
-            <p><br />Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat
-        veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non
-        irurat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non
-        irure.
+          </MDBCardBody>
+        </MDBCol>
+        <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
+          <MDBView className="overlay rounded z-depth-1" waves>
+            <img
+              src="https://static.vecteezy.com/system/resources/previews/000/169/149/non_2x/vector-job-seeker-illustration.jpg"
+              alt=""
+              className="img-fluid"
+            />
+            <a href="#!">
+              <MDBMask overlay="white-slight" />
+            </a>
+          </MDBView>
+          <MDBCardBody className="pb-0">
+            <h4 className="font-weight-bold my-3">Keep track of that job position</h4>
+            <p className="grey-text">
+              Have the information about your dream job on fingertips and never miss out, that information about that company or position you applied.
             </p>
-          </div>
-          <div className="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-            <b>Person I spoke to: `name goes here`</b>
-            <p><br />Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat
-        veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non
-        irurat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non
-        irure.
+          </MDBCardBody>
+        </MDBCol>
+        <MDBCol lg="4" md="12" className="mb-lg-0 mb-4">
+          <MDBView className="overlay rounded z-depth-1" waves>
+            <img
+              src="https://images.ctfassets.net/6g4gfm8wk7b6/3WNFSztN9uQMaEi8wqOWMe/851ba5e7c3c6d0c9cc61ba46493776ac/1-_Guide_to_starting_your_job_search.png"
+              alt=""
+              className="img-fluid"
+            />
+            <a href="#!">
+              <MDBMask overlay="white-slight" />
+            </a>
+          </MDBView>
+          <MDBCardBody className="pb-0">
+            <h4 className="font-weight-bold my-3">No more Notepads </h4>
+            <p className="grey-text">
+              Temporibus autem quibusdam et aut officiis debitis aut rerum
+              necessitatibus saepe eveniet ut et voluptates repudiandae.
             </p>
-          </div>
-          <div className="tab-pane fade" id="nav-person" role="tabpanel" aria-labelledby="nav-person-tab">
-            <b>Company Position</b>
-            <p><br />Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat
-        veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non
-        irurat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non
-        irure.
-            </p>
-          </div>
-        </div>
-        <button type="button" className="btn blue-grey">DELETE</button>
-        <button type="button" className="btn teal darken-1">UPDATE</button>
-        <button type="button" className="btn cyan darken-1">VIEW JOB LISTING</button>
-      </div>
-    </div>
-  </div>
-)
+          </MDBCardBody>
+        </MDBCol>
+      </MDBRow>
+    </section>
+  )
+}
 
 export default Home

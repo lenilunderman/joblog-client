@@ -1,17 +1,44 @@
-import React, { useState } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Link, withRouter, Redirect } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import axios from 'axios'
 import apiUrl from '../../apiConfig'
+import messages from '../AutoDismissAlert/messages'
 
-const JobListingEditForm = ({ match, user }) => {
-  const [joblisting, setJoblisting] = useState({})
+const JobListingEditForm = ({ match, user, msgAlert }) => {
+  // runs when the component appears (is created and inserted into DOM)
+  const [joblisting, setJoblisting] = useState({
+    companyName: '',
+    companyPosition: '',
+    companyPerson: '',
+    companyInfo: '',
+    companyDate: '',
+    companyReplied: ''
+  })
+  const [updated, setUpdated] = useState(false)
+  // tests here
+  useEffect(() => {
+    axios({
+      url: `${apiUrl}/joblisting/${match.params.id}`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Token token=${user.token}`
+      },
+      // fix the pass of data
+      data: joblisting
+    })
+      .then(res => setJoblisting(res.data.joblisting))
+      .catch(console.error)
+  }, [])
+  // end of test
+
   const inputChange = event => {
     event.persist()
     setJoblisting(prevState => {
       const updatedField = { [event.target.name]: event.target.value }
       const editedEvents = Object.assign({}, prevState.joblisting, updatedField)
+      // const editedEvents = Object.assign({}, prevState.joblisting, updatedField)
       return { joblisting: editedEvents }
     })
   }
@@ -28,8 +55,18 @@ const JobListingEditForm = ({ match, user }) => {
       // fix the pass of data
       data: joblisting
     })
-      .then(res => console.log('response here', res))
+      .then(() => setUpdated(true))
+      // .then(res => console.log('response here', res))
       .catch(console.error)
+  }
+
+  if (updated) {
+    msgAlert({
+      heading: 'You updated a job listing successfully.',
+      messagE: messages.signOutSuccess,
+      variant: 'success'
+    })
+    return <Redirect to={'/view-joblisting'} />
   }
 
   return (

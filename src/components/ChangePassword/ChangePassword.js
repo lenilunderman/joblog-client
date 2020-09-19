@@ -48,13 +48,14 @@ class ChangePassword extends Component {
 
     return (
       <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Change Password</h3>
+        <div className="col-sm-10 col-md-8 mx-auto mt-5 p-5">
+          <h2 className="my-4"> Change Password </h2>
           <Form onSubmit={this.onChangePassword}>
             <Form.Group controlId="oldPassword">
               <Form.Label>Old password</Form.Label>
               <Form.Control
                 required
+                size="lg"
                 name="oldPassword"
                 value={oldPassword}
                 type="password"
@@ -66,6 +67,7 @@ class ChangePassword extends Component {
               <Form.Label>New Password</Form.Label>
               <Form.Control
                 required
+                size="lg"
                 name="newPassword"
                 value={newPassword}
                 type="password"
@@ -74,7 +76,9 @@ class ChangePassword extends Component {
               />
             </Form.Group>
             <Button
-              variant="primary"
+              variant=""
+              size="lg"
+              className="btnSignUp"
               type="submit"
             >
               Submit

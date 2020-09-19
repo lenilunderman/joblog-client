@@ -56,7 +56,8 @@ class Events extends Component {
       msgAlert({
         heading: 'Created Job listing successfully.',
         messagE: messages.signOutSuccess,
-        variant: 'success'
+        variant: 'alert alert-info',
+        class: 'alert alert-info'
       })
       return <Redirect to='/view-joblisting' />
     }

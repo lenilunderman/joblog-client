@@ -1,14 +1,23 @@
 @import '~bootstrap/scss/bootstrap';
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,600&display=swap');
+body{
+  font-family: 'Montserrat', sans-serif !important;
+}
 .nav-item {
   cursor: pointer !important;
 }
 
 .row {
-	background-color: #dfdfdf;
   margin-top: 10px;
   border-radius: 10px;
   padding-bottom: 10px;
+}
+
+.row2 {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding-bottom: 30px;
+  padding-top: 5px;
 }
 
 .container-fluid{
@@ -31,4 +40,49 @@
 .modal_content {
   background-color: white;
   position: absolute;
+}
+
+a{
+  color: black !important;
+}
+
+.big-font{
+  font-size: 60px !important;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+  box-shadow: none !important;
+}
+
+p.header-font{
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color:#2b2e33;
+}
+
+.navbar-brand {
+  font-weight: 600;
+}
+
+.btnSignUp{
+  background-color: #90caf9!important;
+}
+
+.row{
+  background-color: #90caf936;
+}
+
+.joblisting-title{
+  text-align: center;
+  margin-top: 25px;
+  font-weight: 600;
+  color: #37474f;
+  font-size: 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.leni{
+  background-color: red!important;
+  color: pink!important;
 }

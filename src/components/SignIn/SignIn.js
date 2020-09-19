@@ -31,7 +31,8 @@ class SignIn extends Component {
       .then(() => msgAlert({
         heading: 'Sign In Success',
         message: messages.signInSuccess,
-        variant: 'success'
+        variant: 'alert alert-primary',
+        class: 'alert alert-primary'
       }))
       .then(() => history.push('/view-joblisting'))
       .catch(error => {
@@ -49,13 +50,14 @@ class SignIn extends Component {
 
     return (
       <div className="row">
-        <div className="col-sm-10 col-md-8 mx-auto mt-5">
-          <h3>Sign In</h3>
+        <div className="col-sm-10 col-md-8 mx-auto mt-5 p-5">
+          <h2 className="my-4">Sign In</h2>
           <Form onSubmit={this.onSignIn}>
             <Form.Group controlId="email">
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 required
+                size="lg"
                 type="email"
                 name="email"
                 value={email}
@@ -67,6 +69,7 @@ class SignIn extends Component {
               <Form.Label>Password</Form.Label>
               <Form.Control
                 required
+                size="lg"
                 name="password"
                 value={password}
                 type="password"
@@ -75,7 +78,9 @@ class SignIn extends Component {
               />
             </Form.Group>
             <Button
-              variant="primary"
+              variant=""
+              size="lg"
+              className="btnSignUp"
               type="submit"
             >
               Submit

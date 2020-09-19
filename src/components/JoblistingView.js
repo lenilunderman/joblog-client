@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../apiConfig'
 // import moment from 'moment'
@@ -97,53 +97,47 @@ class JobListingView extends Component {
   }
 
   render () {
-    console.log('user', this.props.user)
-    console.log('response data:', this.state.joblisting)
-    console.log('response:', this.state.joblisting)
-
     const jobLists = this.state.joblistings.map((joblist, i) => (
       // <Link key={joblist._id} to="#">
       <div className="row" key={joblist.id}>
         <div className="col-sm">
-          <nav className="blue-grey mt-3 px-2">
+          <nav className="special-color mt-3 px-2">
             <div className="nav nav-tabs md-tabs" id="nav-tab" role="tablist">
-              <span onClick={(e) => this.makeActivetab(e, i, 'isnametab')} className={joblist.isnametab ? 'nav-item nav-link active grey-text font-weight-bold' : 'nav-item nav-link grey-text font-weight-bold mx-1'} id="nav-home-tab" data-toggle="tab"
+              <span onClick={(e) => this.makeActivetab(e, i, 'isnametab')} className={joblist.isnametab ? 'nav-item nav-link active grey-text font-weight-bold blue-grey lighten-4' : 'nav-item nav-link grey-text font-weight-bold mx-1'} id="nav-home-tab" data-toggle="tab"
                 aria-controls="nav-home" aria-selected="true">Company Name</span>
-              <span onClick={(e) => this.makeActivetab(e, i, 'ispositiontab')} className={joblist.ispositiontab ? 'nav-item nav-link active grey-text font-weight-bold' : 'nav-item nav-link grey-text font-weight-bold mx-1'} id="nav-profile-tab" data-toggle="tab"
+              <span onClick={(e) => this.makeActivetab(e, i, 'ispositiontab')} className={joblist.ispositiontab ? 'nav-item nav-link active grey-text font-weight-bold blue-grey lighten-4' : 'nav-item nav-link grey-text font-weight-bold mx-1'} id="nav-profile-tab" data-toggle="tab"
                 aria-controls="nav-profile" aria-selected="false">Company Position</span>
-              <span onClick={(e) => this.makeActivetab(e, i, 'ispersontab')} className={joblist.ispersontab ? 'nav-item nav-link active grey-text font-weight-bold' : 'nav-item nav-link grey-text font-weight-bold mx-1'} id="nav-contact-tab" data-toggle="tab"
+              <span onClick={(e) => this.makeActivetab(e, i, 'ispersontab')} className={joblist.ispersontab ? 'nav-item nav-link active grey-text font-weight-bold blue-grey lighten-4' : 'nav-item nav-link grey-text font-weight-bold mx-1'} id="nav-contact-tab" data-toggle="tab"
                 aria-controls="nav-contact" aria-selected="false">Person I spoke to</span>
-              <span onClick={(e) => this.makeActivetab(e, i, 'isinfotab')} className={joblist.isinfotab ? 'nav-item nav-link active grey-text font-weight-bold' : 'nav-item nav-link grey-text font-weight-bold mx-1'} id="nav-info-tab" data-toggle="tab"
+              <span onClick={(e) => this.makeActivetab(e, i, 'isinfotab')} className={joblist.isinfotab ? 'nav-item nav-link active grey-text font-weight-bold blue-grey lighten-4' : 'nav-item nav-link grey-text font-weight-bold mx-1'} id="nav-info-tab" data-toggle="tab"
                 aria-controls="nav-info" aria-selected="false">Company Info</span>
             </div>
           </nav>
           <div className="tab-content pt-3" id="nav-tabContent">
-            {joblist.isnametab && <div className="tab-pane fade show active">
+            {joblist.isnametab && <div className="tab-pane fade show active py-2">
               <p>
                 <b> {joblist.companyName} </b>
               </p>
             </div>}
-            {joblist.ispositiontab && <div className="tab-pane fade show active">
+            {joblist.ispositiontab && <div className="tab-pane fade show active py-2">
               <p>
                 <b>{joblist.companyPosition}</b>
               </p>
             </div>}
-            {joblist.ispersontab && <div className="tab-pane fade show active">
+            {joblist.ispersontab && <div className="tab-pane fade show active py-2">
               <p>
                 <b>{joblist.companyPerson}</b>
               </p>
             </div>}
-            {joblist.isinfotab && <div className="tab-pane fade show active">
+            {joblist.isinfotab && <div className="tab-pane fade show active py-2">
               <p>
-                {joblist.companyDate}
-                <br></br>
-                <b>{joblist.companyInfo}</b>
+                Date: {joblist.companyDate} ---- <b>{joblist.companyInfo}</b>
               </p>
             </div>}
 
           </div>
-          <button onClick={(e) => this.deleteOneJob(e, i, joblist._id)} type="button" className="btn blue-grey">DELETE</button>
-          <button onClick={(e) => this.updateOneJob(e, i, joblist._id)} type="button" className="btn teal darken-1">UPDATE</button>
+          <button onClick={(e) => this.deleteOneJob(e, i, joblist._id)} type="button" className="btn red lighten-1 font-weight-bold btn-md">DELETE</button>
+          <Link to={'/joblisting/' + joblist._id}><button type="button" className="btn light-blue darken-2 font-weight-bold btn-md"> UPDATE </button></Link>
         </div>
       </div>
       // </Link>
@@ -155,7 +149,7 @@ class JobListingView extends Component {
           </Popup>
         }
         <div className="my-joblisting">
-          <h4> All job listing </h4>
+          <h2 className="joblisting-title"> All job listing </h2>
           {jobLists}
         </div>
       </div>
