@@ -36,10 +36,11 @@ const JobListingEditForm = ({ match, user, msgAlert }) => {
   const inputChange = event => {
     event.persist()
     setJoblisting(prevState => {
+      // console.log('prev state stuff: ', prevState)
       const updatedField = { [event.target.name]: event.target.value }
-      const editedEvents = Object.assign({}, prevState.joblisting, updatedField)
+      const editedEvents = Object.assign({}, prevState, updatedField)
       // const editedEvents = Object.assign({}, prevState.joblisting, updatedField)
-      return { joblisting: editedEvents }
+      return editedEvents
     })
   }
 
@@ -53,11 +54,11 @@ const JobListingEditForm = ({ match, user, msgAlert }) => {
         'Authorization': `Token token=${user.token}`
       },
       // fix the pass of data
-      data: joblisting
+      data: { joblisting }
     })
       .then(() => setUpdated(true))
       // .then(res => console.log('response here', res))
-      .catch(console.error)
+      .catch(console.log('error here'))
   }
 
   if (updated) {

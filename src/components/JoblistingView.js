@@ -26,7 +26,7 @@ class JobListingView extends Component {
   // This function is what allows us to render what shows up onto the page dynamically.
   dynamicSearch = (str) => {
     axios({
-      url: `${apiUrl}/joblisting/${str}`,
+      url: `${apiUrl}/joblisting/s/${str}`,
       method: 'GET',
       headers: {
         'Authorization': `Token token=${this.state.user.token}`
@@ -47,7 +47,7 @@ class JobListingView extends Component {
         })
       }))
       // .then(res => console.log(res.data))
-      .catch(console.log)
+      .catch(console.log(Error.response))
   }
 
   toggle = () => {
@@ -68,7 +68,8 @@ class JobListingView extends Component {
       isnametab: false,
       ispositiontab: false,
       ispersontab: false,
-      isinfotab: false
+      isinfotab: false,
+      isreplytab: false
     }
 
     alljob[index][key] = true
@@ -143,8 +144,9 @@ class JobListingView extends Component {
                 aria-controls="nav-contact" aria-selected="false">Person I spoke to</span>
               <span onClick={(e) => this.makeActivetab(e, i, 'isinfotab')} className={joblist.isinfotab ? 'nav-item nav-link active grey-text font-weight-bold blue-grey lighten-4' : 'nav-item nav-link grey-text font-weight-bold mx-1'} id="nav-info-tab" data-toggle="tab"
                 aria-controls="nav-info" aria-selected="false">Company Info</span>
-              <span onClick={(e) => this.makeActivetab(e, i, 'isreplytab')} className={joblist.isreply ? 'nav-item nav-link active grey-text font-weight-bold blue-grey lighten-4' : 'nav-item nav-link grey-text font-weight-bold mx-1'} id="nav-info-tab" data-toggle="tab"
+              <span onClick={(e) => this.makeActivetab(e, i, 'isreplytab')} className={joblist.isreplytab ? 'nav-item nav-link active grey-text font-weight-bold blue-grey lighten-4' : 'nav-item nav-link grey-text font-weight-bold mx-1'} id="nav-info-tab" data-toggle="tab"
                 aria-controls="nav-info" aria-selected="false">Company Reply</span>
+
             </div>
           </nav>
           <div className="tab-content pt-3" id="nav-tabContent">
@@ -169,10 +171,11 @@ class JobListingView extends Component {
               </p>
             </div>}
             {joblist.isreplytab && <div className="tab-pane fade show active py-2">
-              <p> <i className="fas fa-business-time fa-2x mr-3"></i>
-                <b>{joblist.companyReplied}</b>
+              <p> <i className="fas fa-building fa-2x mr-3"></i>
+                <b> {joblist.companyReplied} </b>
               </p>
             </div>}
+
           </div>
           <button onClick={(e) => this.deleteOneJob(e, i, joblist._id)} type="button" className="btn red lighten-1 font-weight-bold btn-md">DELETE</button>
           <Link to={'/joblisting/' + joblist._id}><button type="button" className="btn light-blue darken-2 font-weight-bold btn-md"> UPDATE </button></Link>
@@ -188,10 +191,10 @@ class JobListingView extends Component {
         }
         <div className="my-joblisting">
           <h2 className="joblisting-title"> All Job Listings </h2>
-          <input
+          {/* <input
             value={this.state.searchTerm}
             onChange={this.editSearchTerm}
-            placeholder="Search for the jobs you have applied" className="searchBar"></input>
+            placeholder="Search for a company name" className="searchBar"></input> */}
           {jobLists}
         </div>
       </div>
