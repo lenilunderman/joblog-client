@@ -4,10 +4,6 @@ import axios from 'axios'
 import apiUrl from '../apiConfig'
 // import moment from 'moment'
 import messages from './AutoDismissAlert/messages'
-// import { Redirect } from 'react-router-dom'
-// import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact'
-// import Popup from 'reactjs-popup'
-// import 'reactjs-popup/dist/index.css'
 import Popup from './Popup'
 
 class JobListingView extends Component {
@@ -16,9 +12,44 @@ class JobListingView extends Component {
     this.state = {
       joblistings: [],
       user: this.props.user,
+      searchTerm: '',
       modal: false
     }
   }
+  // edit Search term function
+  editSearchTerm = (e) => {
+    this.setState({ searchTerm: e.target.value })
+    this.dynamicSearch(e.target.value)
+  }
+
+  // dinamic searchTerm function
+  // This function is what allows us to render what shows up onto the page dynamically.
+  dynamicSearch = (str) => {
+    axios({
+      url: `${apiUrl}/joblisting/${str}`,
+      method: 'GET',
+      headers: {
+        'Authorization': `Token token=${this.state.user.token}`
+      },
+      // fix the pass of data
+      joblisting: { owner: this.state.user._id }
+    })
+      .then(res => this.setState({
+        joblistings: res.data.joblistings.map(x => {
+          return {
+            ...x,
+            isnametab: true,
+            ispositiontab: false,
+            ispersontab: false,
+            isinfotab: false,
+            isreplytab: false
+          }
+        })
+      }))
+      // .then(res => console.log(res.data))
+      .catch(console.log)
+  }
+
   toggle = () => {
     this.setState({
       modal: !this.state.modal
@@ -157,6 +188,10 @@ class JobListingView extends Component {
         }
         <div className="my-joblisting">
           <h2 className="joblisting-title"> All Job Listings </h2>
+          <input
+            value={this.state.searchTerm}
+            onChange={this.editSearchTerm}
+            placeholder="Search for the jobs you have applied" className="searchBar"></input>
           {jobLists}
         </div>
       </div>
