@@ -4,7 +4,7 @@ export default class PopUp extends Component {
     this.props.toggle()
   };
   render () {
-    console.log('hi')
+    // console.log('hi')
     return (
       <div className='modal'>
         <div className='modal_content'>

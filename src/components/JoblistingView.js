@@ -47,7 +47,7 @@ class JobListingView extends Component {
   // delete function
   deleteOneJob = (event, index, id) => {
     const { msgAlert } = this.props
-    console.log(event, index, id)
+    // console.log(event, index, id)
     axios({
       url: `${apiUrl}/joblisting/${id}`,
       method: 'DELETE',
@@ -99,7 +99,7 @@ class JobListingView extends Component {
   render () {
     const jobLists = this.state.joblistings.map((joblist, i) => (
       // <Link key={joblist._id} to="#">
-      <div className="row" key={joblist.id}>
+      <div className="row" key={joblist._id}>
         <div className="col-sm">
           <nav className="special-color mt-3 px-2">
             <div className="nav nav-tabs md-tabs" id="nav-tab" role="tablist">

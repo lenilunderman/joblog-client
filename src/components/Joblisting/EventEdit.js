@@ -45,7 +45,7 @@ const JobListingEditForm = ({ match, user, msgAlert }) => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log('joblisting event', joblisting)
+    // console.log('joblisting event', joblisting)
     axios({
       url: `${apiUrl}/joblisting/${match.params.id}`,
       method: 'PATCH',
