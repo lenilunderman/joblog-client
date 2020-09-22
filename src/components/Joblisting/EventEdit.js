@@ -58,7 +58,7 @@ const JobListingEditForm = ({ match, user, msgAlert }) => {
     })
       .then(() => setUpdated(true))
       // .then(res => console.log('response here', res))
-      .catch(console.log('error here'))
+      .catch(console.log(''))
   }
 
   if (updated) {
