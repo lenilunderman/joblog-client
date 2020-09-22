@@ -1,5 +1,5 @@
 import React from 'react'
-import { MDBRow, MDBCol, MDBCardBody, MDBView, MDBMask } from 'mdbreact'
+import { MDBRow, MDBCol, MDBCardBody, MDBView } from 'mdbreact'
 
 const Home = () => {
   return (
@@ -20,9 +20,6 @@ const Home = () => {
                 alt=""
                 className="img-fluid"
               />
-              <a href="#!">
-                <MDBMask overlay="white-slight" />
-              </a>
             </MDBView>
             <MDBCardBody className="pb-0">
               <h4 className="font-weight-bold my-3">No more Spreadsheets</h4>
@@ -38,9 +35,6 @@ const Home = () => {
                 alt=""
                 className="img-fluid"
               />
-              <a href="#!">
-                <MDBMask overlay="white-slight" />
-              </a>
             </MDBView>
             <MDBCardBody className="pb-0">
               <h4 className="font-weight-bold my-3">Keep track of that job position</h4>
@@ -56,9 +50,6 @@ const Home = () => {
                 alt=""
                 className="img-fluid"
               />
-              <a href="#!">
-                <MDBMask overlay="white-slight" />
-              </a>
             </MDBView>
             <MDBCardBody className="pb-0">
               <h4 className="font-weight-bold my-3">No more Notepads </h4>

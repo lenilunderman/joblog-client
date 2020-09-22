@@ -127,3 +127,15 @@ footer.page-footer .footer-copyright {
   font-size: 18px;
   border-color: #37474f;
 }
+
+#root > main > div > section > div > div:nth-child(1) > div.view.overlay.rounded.z-depth-1.Ripple-parent > img{
+  cursor: default;
+}
+
+#root > main > div > section > div > div:nth-child(2) > div.view.overlay.rounded.z-depth-1.Ripple-parent > img{
+  cursor: default;
+}
+
+#root > main > div > section > div > div:nth-child(3) > div.view.overlay.rounded.z-depth-1.Ripple-parent > img{
+  cursor: default;
+}

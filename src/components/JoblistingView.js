@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import apiUrl from '../apiConfig'
-// import moment from 'moment'
+import moment from 'moment'
 import messages from './AutoDismissAlert/messages'
 import Popup from './Popup'
 
@@ -167,7 +167,7 @@ class JobListingView extends Component {
             </div>}
             {joblist.isinfotab && <div className="tab-pane fade show active py-2">
               <p>
-                <i className="fas fa-calendar-alt fa-2x mr-3"></i> {joblist.companyDate} <i className="fas fa-address-card fa-2x mx-3"></i> <b>{joblist.companyInfo}</b>
+                <i className="fas fa-calendar-alt fa-2x mr-3"></i> {moment(joblist.companyDate).format('MMMM Do YYYY')} <i className="fas fa-address-card fa-2x mx-3"></i> <b>{joblist.companyInfo}</b>
               </p>
             </div>}
             {joblist.isreplytab && <div className="tab-pane fade show active py-2">
